@@ -1,0 +1,98 @@
+
+buildscript {
+    ext {
+        springBootVersion = '2.2.4.RELEASE'
+        kotlinVersion = '1.3.61'
+        arrowVersion = "0.10.1"
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'http://repo.spring.io/plugins-release' }
+        maven { url "https://dl.bintray.com/arrow-kt/arrow-kt/" }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
+        classpath 'io.spring.gradle:propdeps-plugin:0.0.9.RELEASE'
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+allprojects {
+    version = '0.0.1'
+    group = 'ru.f0xdev'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'http://repo.spring.io/plugins-release' }
+        maven { url "https://dl.bintray.com/arrow-kt/arrow-kt/" }
+    }
+
+}
+ext {
+    springBootVersion = '2.2.4.RELEASE'
+    kotlinVersion = '1.3.61'
+    arrowVersion = "0.10.1"
+}
+
+
+
+//
+//subprojects {
+//
+//    buildscript {
+//        ext {
+//            springBootVersion = '2.2.4.RELEASE'
+//            kotlin_version = '1.3.61'
+//            arrow_version = "0.10.1"
+//        }
+//        dependencies {
+//            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//            classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_version"
+//            classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
+//            classpath 'io.spring.gradle:propdeps-plugin:0.0.9.RELEASE'
+//            classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_version"
+//        }
+//    }
+//
+//    apply plugin: 'java'
+//    apply plugin: 'kotlin'
+//    apply plugin: 'propdeps'
+//    apply plugin: 'propdeps-maven'
+//    apply plugin: 'propdeps-idea'
+//    apply plugin: 'kotlin-kapt'
+//
+//    sourceCompatibility = 1.8
+//
+//    task printVersion {
+//        doLast {
+//            println project.version
+//        }
+//    }
+//
+//    repositories {
+//        jcenter()
+//        mavenLocal()
+//        mavenCentral()
+//        maven { url 'http://repo.spring.io/plugins-release' }
+//        maven { url "https://dl.bintray.com/arrow-kt/arrow-kt/" }
+//
+//    }
+//
+//    dependencies {
+//        compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+//        compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+//
+//        compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+//        compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+//        testCompile 'junit:junit:4.12'
+//        testCompile 'org.mockito:mockito-core:2.7.22'
+//        testCompile "org.springframework.boot:spring-boot-starter-test:$spring_version"
+//        implementation 'org.springframework.security:spring-security-test:5.1.5.RELEASE'
+//        compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.4.1"
+//    }
+//}

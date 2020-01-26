@@ -1,0 +1,20 @@
+version: '2'
+services:
+  db:
+    image: postgres:11.2-alpine
+    command: postgres -c max_connections=300 -c log_directory='pg_log' -c log_statement='all' -c logging_collector=on
+    container_name: coffee-test-db
+    ports:
+      - "9901:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./initdb/test:/docker-entrypoint-initdb.d
+    networks:
+      - test-network
+networks:
+  test-network:
+    ipam:
+      config:
+        - subnet: 192.168.16.0/24

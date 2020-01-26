@@ -1,0 +1,6 @@
+rootProject.name = 'bank'
+
+include("auth-service")
+include("mobile-service")
+//include("crm-service")
+

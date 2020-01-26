@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      properties:
+      hibernate.format_sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth
+    username: auth
+    password: auth
+app:
+  #    21 час
+  accessTokenLiveTimeSec: 75600
+  #  1 год
+  refreshTokenLiveTimeSec: 31536000
+  client-secret:  client-secret
+  client-id:  client-id
+server:
+  port: 8085
+logging:
+  level:
+    #    org.springframework.security: DEBUG
+    #    org.hibernate.SQL: DEBUG
+    #    org.hibernate.type.descriptor.sql: TRACE
+    ru.f0xdev.bank.auth-service: DEBUG

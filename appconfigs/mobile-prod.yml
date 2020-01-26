@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      properties:
+      hibernate.format_sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mobile
+    username: mobile
+    password: mobile
+app:
+  client-secret:  client-secret
+  client-id:  client-id
+server:
+  port: 8086
+logging:
+  level:
+    #    org.springframework.security: DEBUG
+    #    org.hibernate.SQL: DEBUG
+    #    org.hibernate.type.descriptor.sql: TRACE
+    ru.f0xdev.bank.mobile-service: DEBUG
