@@ -1,10 +1,10 @@
 package ru.f0xdev.mobile.services
 
-import NOT_FOUND
 import arrow.core.Either
 import org.springframework.stereotype.Service
-import ru.f0xdev.mobile.dto.CustomerDTO
-import ru.f0xdev.mobile.dto.ErrorDTO
+import ru.f0xdev.common.NOT_FOUND
+import ru.f0xdev.common.dto.CustomerDTO
+import ru.f0xdev.common.dto.ErrorDTO
 
 interface ICustomerService {
     fun getCustomer(customerId: Long): Either<ErrorDTO, CustomerDTO>

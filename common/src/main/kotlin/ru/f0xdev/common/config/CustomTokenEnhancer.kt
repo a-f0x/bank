@@ -1,4 +1,4 @@
-package ru.f0xdev.auth.config
+package ru.f0xdev.common.config
 
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken
 import org.springframework.security.oauth2.common.OAuth2AccessToken

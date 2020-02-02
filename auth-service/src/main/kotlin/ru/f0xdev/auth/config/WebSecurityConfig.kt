@@ -1,6 +1,7 @@
 package ru.f0xdev.auth.config
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.AuthenticationManager
@@ -12,7 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder
 
 @Configuration
 @EnableWebSecurity
-open class WebSecurityConfig(private val userDetailsService: UserDetailsService) : WebSecurityConfigurerAdapter() {
+open class WebSecurityConfig(@Qualifier("customDetailService") private val userDetailsService: UserDetailsService,
+                             private val passwordEncoder: PasswordEncoder) : WebSecurityConfigurerAdapter() {
 
     @Bean
     @Throws(Exception::class)
@@ -23,8 +25,13 @@ open class WebSecurityConfig(private val userDetailsService: UserDetailsService)
     @Autowired
     @Throws(Exception::class)
     fun globalUserDetails(auth: AuthenticationManagerBuilder, encoder: PasswordEncoder) {
-        auth.userDetailsService(userDetailsService)
-                .passwordEncoder(encoder)
-    }
+//        auth.userDetailsService(userDetailsService)
+//                .passwordEncoder(encoder)
+        auth.inMemoryAuthentication()
+                .withUser("john").password(passwordEncoder.encode("123")).roles("USER").and()
+                .withUser("tom").password(passwordEncoder.encode("111")).roles("ADMIN").and()
+                .withUser("user1").password(passwordEncoder.encode("pass")).roles("USER").and()
+                .withUser("admin").password(passwordEncoder.encode("nimda")).roles("ADMIN")
 
+    }
 }

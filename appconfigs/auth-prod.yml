@@ -6,16 +6,40 @@ spring:
       hibernate.format_sql: true
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/auth
+    url: jdbc:postgresql://localhost:9901/auth
     username: auth
     password: auth
 app:
-  #    21 час
-  accessTokenLiveTimeSec: 75600
-  #  1 год
-  refreshTokenLiveTimeSec: 31536000
-  client-secret:  client-secret
-  client-id:  client-id
+  resourceServers:
+    - name: mobile-service
+      accessTokenLiveTimeSec: 3600
+      refreshTokenLiveTimeSec: 2592000
+      clientId:  mobile-client-id
+      clientSecret:  mobile-client-secret
+      scopes:
+        - read
+        - wtite
+        - mobile
+      grantTypes:
+        - password
+        - authorization_code
+        - refresh_token
+        - client_credentials
+    - name: mobile-service
+      accessTokenLiveTimeSec: 3600
+      refreshTokenLiveTimeSec: 2592000
+      clientId:  web-client-id
+      clientSecret:  web-client-secret
+      scopes:
+        - read
+        - wtite
+        - web
+      grantTypes:
+        - password
+        - authorization_code
+        - refresh_token
+        - client_credentials
+
 server:
   port: 8085
 logging:

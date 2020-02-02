@@ -1,4 +1,4 @@
-package ru.f0xdev.mobile.dto
+package ru.f0xdev.common.dto
 
 data class CustomerDTO(
         val id: Long,

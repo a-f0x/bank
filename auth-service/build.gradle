@@ -35,6 +35,7 @@ dependencies {
     compile "io.arrow-kt:arrow-core:$arrowVersion"
     compile "io.arrow-kt:arrow-syntax:$arrowVersion"
     kapt    "io.arrow-kt:arrow-meta:$arrowVersion"
+    compile(project(":common"))
 
 }
 compileKotlin {

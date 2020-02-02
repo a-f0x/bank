@@ -1,10 +1,12 @@
+package ru.f0xdev.common
+
 import arrow.core.Either
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import ru.f0xdev.mobile.dto.ErrorDTO
-import ru.f0xdev.mobile.dto.ErrorResponseDTO
-import ru.f0xdev.mobile.dto.ResponseDTO
-import ru.f0xdev.mobile.dto.SuccessResponseDTO
+import ru.f0xdev.common.dto.ErrorDTO
+import ru.f0xdev.common.dto.ErrorResponseDTO
+import ru.f0xdev.common.dto.ResponseDTO
+import ru.f0xdev.common.dto.SuccessResponseDTO
 
 const val NOT_FOUND = 404
 const val SERVER_ERROR = 500

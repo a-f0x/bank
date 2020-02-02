@@ -2,7 +2,9 @@ package ru.f0xdev.auth.services
 
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.stereotype.Service
 
+@Service
 class CustomDetailService() : UserDetailsService {
 
     override fun loadUserByUsername(username: String?): UserDetails {

@@ -1,4 +1,4 @@
-package ru.f0xdev.mobile.dto
+package ru.f0xdev.common.dto
 
 import com.fasterxml.jackson.annotation.JsonInclude
 
